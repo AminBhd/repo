@@ -47,21 +47,14 @@ export default {
     mounted: function() {
         this.$refs.canvas.appendChild(this.renderer.domElement)
         this.rotating();
-        this.newfunc();
         
     },
     methods: {
-        newfunc: () => {
-            setTimeout(() => {
-                console.log(this.clients.x, this.clients.y);
-            }, 4000);
-        },
         getClients: (x, y, event) => {
             x = event.clientX;
             y = event.clientY;
         },
         rotating: function() {
-            // console.log(this.clients.x)
             // const elapsedTime = this.clock.getElapsedTime()
             this.camera.position.x = -1 *(this.clients.x / window.innerWidth - 0,5); 
             this.camera.position.y = -1 *(this.clients.y / window.innerHeight - 0,5);
